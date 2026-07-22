@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamHub — ভাইরাল সেক্স ভিডিও </title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:        #0b0b0e;
+    --bg-elev:   #17171c;
+    --bg-card:   #1e1e25;
+    --line:      #2a2a32;
+    --text:      #f0eff5;
+    --text-dim:  #9a98a8;
+    --accent:    #ff2f56;
+    --accent-2:  #ffb020;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    min-height:100vh;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+
+  h1,h2,h3,.brand{
+    font-family:'Oswald', sans-serif;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+
+  /* ---------------- HEADER ---------------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,11,14,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1280px; margin:0 auto; padding:14px 20px;
+    display:flex; align-items:center; gap:24px;
+  }
+  .brand{ font-size:22px; font-weight:700; color:var(--text); white-space:nowrap; }
+  .brand span{ color:var(--accent); }
+  .search{
+    flex:1; display:flex; background:var(--bg-elev);
+    border:1px solid var(--line); border-radius:4px; overflow:hidden;
+  }
+  .search input{
+    flex:1; background:transparent; border:none; outline:none;
+    color:var(--text); padding:10px 14px; font-size:14px;
+  }
+  .search button{
+    background:var(--accent); border:none; color:#fff; padding:0 18px; cursor:pointer;
+  }
+  .header-actions{ display:flex; gap:10px; }
+
+  /* ---------------- SMALL HEADER CAROUSEL ---------------- */
+  .header-carousel{
+    width:220px; height:44px; overflow:hidden; position:relative;
+    border-radius:4px; flex:none;
+  }
+  .header-carousel-track{
+    display:flex; gap:8px; height:100%; width:max-content;
+    animation:headerScroll 20s linear infinite;
+  }
+  .header-carousel:hover .header-carousel-track{ animation-play-state:paused; }
+  .header-carousel-track .mini-card{
+    width:70px; height:44px; flex:none; border-radius:4px; overflow:hidden;
+    cursor:pointer; position:relative;
+    background:linear-gradient(135deg, var(--card-a,#3a2436), var(--card-b,#1e1e25));
+  }
+  .header-carousel-track .mini-card img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  }
+  @keyframes headerScroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  .btn{
+    padding:9px 18px; border-radius:4px; font-weight:600; font-size:13px;
+    cursor:pointer; border:none; transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-accent{ background:var(--accent); color:#fff; }
+  .btn-ghost{ background:transparent; color:var(--text-dim); border:1px solid var(--line); }
+
+  nav.categories{
+    max-width:1280px; margin:0 auto; padding:0 20px 12px;
+    display:flex; gap:10px; overflow-x:auto;
+  }
+  nav.categories a{
+    flex:none; font-size:12px; text-transform:uppercase; letter-spacing:.5px;
+    color:var(--text-dim); background:var(--bg-elev); border:1px solid var(--line);
+    padding:7px 14px; border-radius:100px; white-space:nowrap;
+  }
+  nav.categories a.active{ background:var(--accent); color:#fff; border-color:var(--accent); }
+
+  /* ---------------- VIDEO GRID ---------------- */
+  main{ max-width:1280px; margin:0 auto; padding:8px 20px 60px; }
+  .section-title{
+    font-size:15px; color:var(--text-dim); margin:26px 0 14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .section-title::after{ content:""; flex:1; height:1px; background:var(--line); }
+
+  .grid{
+    display:grid; gap:16px;
+    grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .carousel-wrap{
+    overflow:hidden; position:relative;
+  }
+  .carousel-track{
+    display:flex; gap:16px; width:max-content;
+    animation:scrollLeft 30s linear infinite;
+  }
+  .carousel-wrap:hover .carousel-track{ animation-play-state:paused; }
+  .carousel-track .card{ width:220px; flex:none; }
+  @keyframes scrollLeft{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  .card{
+    background:var(--bg-card); border-radius:6px; overflow:hidden;
+    transition:transform .18s ease;
+  }
+  .card:hover{ transform:translateY(-4px); }
+
+  .thumb{
+    position:relative; aspect-ratio:16/10;
+    background:linear-gradient(135deg, var(--card-a,#3a2436), var(--card-b,#1e1e25));
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; overflow:hidden;
+  }
+  .thumb img.thumb-img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  }
+  .thumb .play-icon{
+    z-index:2;
+    width:52px; height:52px; border-radius:50%;
+    background:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 6px rgba(255,47,86,.22), 0 4px 14px rgba(0,0,0,.5);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .thumb .play-icon::before{
+    content:"";
+    border-style:solid;
+    border-width:9px 0 9px 15px;
+    border-color:transparent transparent transparent #fff;
+    margin-left:4px; /* ত্রিভুজটা অপটিক্যালি মাঝে বসাতে সামান্য শিফট */
+  }
+  .thumb:hover .play-icon{
+    transform:scale(1.1);
+    box-shadow:0 0 0 9px rgba(255,47,86,.3), 0 6px 18px rgba(0,0,0,.6);
+  }
+
+  .duration{
+    position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,.75);
+    font-size:11px; padding:2px 6px; border-radius:3px; z-index:1;
+  }
+  .hd{
+    position:absolute; top:6px; left:6px; background:var(--accent);
+    font-size:10px; font-weight:600; padding:2px 6px; border-radius:3px; z-index:1;
+  }
+  .card-info{ padding:10px 12px; }
+  .card-info .title{ font-size:13px; font-weight:500; margin-bottom:4px;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+    cursor:pointer;
+  }
+  .title-input{
+    width:100%; background:var(--bg-elev); border:1px solid var(--line);
+    color:var(--text); font-size:13px; font-weight:500; padding:5px 7px;
+    border-radius:4px; margin-bottom:4px; font-family:'Inter', sans-serif;
+  }
+  .title-input:focus{ outline:none; border-color:var(--accent); }
+  .title-edit-btn{
+    background:none; border:none; color:var(--text-dim); font-size:11px;
+    cursor:pointer; padding:0; margin-left:6px; text-decoration:underline;
+  }
+  .title-edit-btn:hover{ color:var(--accent); }
+  .title-row{ display:flex; align-items:center; justify-content:space-between; gap:6px; }
+  .card-info .meta{ font-size:11px; color:var(--text-dim); }
+  .card-ad-slot{
+    margin-top:8px; display:flex; justify-content:center;
+    overflow:hidden; max-width:100%; min-height:20px;
+  }
+
+  footer{
+    border-top:1px solid var(--line); margin-top:40px; padding:26px 20px 40px;
+    text-align:center; color:#4d4b58; font-size:12px;
+  }
+
+  @media (max-width:640px){
+    .header-inner{ flex-wrap:wrap; }
+    .search{ order:3; width:100%; }
+  }
+
+  /* ---------------- VIDEO PLAYER MODAL ---------------- */
+  #playerModal{
+    position:fixed; inset:0; z-index:900;
+    background:rgba(0,0,0,0.9);
+    display:none; align-items:center; justify-content:center;
+    padding:20px;
+  }
+  #playerModal.open{ display:flex; }
+  .player-box{ width:100%; max-width:960px; }
+  .player-head{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:10px; color:var(--text);
+  }
+  .player-head h3{ font-size:14px; font-weight:500; text-transform:none; letter-spacing:0; }
+  .player-close{
+    background:var(--bg-elev); border:1px solid var(--line); color:var(--text);
+    width:30px; height:30px; border-radius:4px; cursor:pointer; font-size:14px;
+  }
+  .player-frame-wrap{
+    position:relative; width:100%; aspect-ratio:16/9;
+    background:#000; border-radius:6px; overflow:hidden;
+  }
+  #playerFrame{ width:100%; height:100%; border:none; }
+
+  /* ---------------- ADSTERRA AD SLOTS ---------------- */
+  .ad-slot{
+    display:flex; justify-content:center; align-items:center;
+    margin:18px auto; overflow:hidden;
+  }
+  .ad-slot::before{
+    content:""; position:static;
+  }
+  .ad-label{
+    text-align:center; font-size:10px; color:var(--text-dim);
+    letter-spacing:1px; margin:14px 0 4px; text-transform:uppercase;
+  }
+  .ad-skyscraper{
+    position:fixed; top:120px; right:16px; z-index:40;
+  }
+  @media (max-width:1400px){
+    .ad-skyscraper{ display:none; } /* ছোট স্ক্রিনে জায়গা না থাকলে হাইড */
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ ADSTERRA 160x600 SKYSCRAPER (ডেস্কটপে ফিক্সড, ডানপাশে) ============ -->
+  <div class="ad-skyscraper">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '910c15f24ce112728c1504e20755bb0f',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/910c15f24ce112728c1504e20755bb0f/invoke.js"></script>
+  </div>
+
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">Stream<span>Hub</span></div>
+      <div class="search">
+        <input type="text" placeholder="ভিডিও খুঁজুন...">
+        <button>খুঁজুন</button>
+      </div>
+      <div class="header-carousel"><div class="header-carousel-track" id="header-carousel-track"></div></div>
+    </div>
+    <nav class="categories">
+      <a href="#" class="active">সব</a>
+      <a href="#">টিউটোরিয়াল</a>
+      <a href="#">ভ্লগ</a>
+      <a href="#">গেমিং</a>
+      <a href="#">সঙ্গীত</a>
+      <a href="#">খবর</a>
+      <a href="#">বিনোদন</a>
+    </nav>
+  </header>
+
+  <!-- ============ ADSTERRA 728x90 BANNER (হেডারের নিচে) ============ -->
+  <div class="ad-slot">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '8e1957a358c28ebdcc4d7e59fa2da5da',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/8e1957a358c28ebdcc4d7e59fa2da5da/invoke.js"></script>
+  </div>
+
+  <main>
+    <div class="section-title">সর্বশেষ ভিডিও</div>
+    <div class="grid" id="grid-1"></div>
+
+    <!-- ============ ADSTERRA NATIVE BANNER ============ -->
+    <div class="ad-slot">
+      <script async data-cfasync="false" src="https://pl30461847.effectivecpmnetwork.com/6e303e65aeb6efa18991921ee3986f63/invoke.js"></script>
+      <div id="container-6e303e65aeb6efa18991921ee3986f63"></div>
+    </div>
+
+    <div class="section-title">জনপ্রিয় ভিডিও</div>
+    <div class="grid" id="grid-2"></div>
+
+    <!-- ============ ADSTERRA 300x250 BANNER ============ -->
+    <div class="ad-slot">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '23cfb7f73e7455ab317cff22a032651b',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="https://www.highperformanceformat.com/23cfb7f73e7455ab317cff22a032651b/invoke.js"></script>
+    </div>
+
+    <div class="section-title">সর্বাধিক দেখা</div>
+    <div class="grid" id="grid-3"></div>
+  </main>
+
+  <!-- ============ ADSTERRA 468x60 BANNER (ফুটারের আগে) ============ -->
+  <div class="ad-slot">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'e4439fbd0d3c15c9b3c2c97d33cf72d3',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/e4439fbd0d3c15c9b3c2c97d33cf72d3/invoke.js"></script>
+  </div>
+
+  <footer>
+    © 2026 StreamHub · ডেমো লেআউট — নিজের ভিডিও লিংক ও থাম্বনেইল যোগ করে ব্যবহার করুন।
+  </footer>
+
+  <!-- ============ VIDEO PLAYER MODAL ============ -->
+  <div id="playerModal">
+    <div class="player-box">
+      <div class="player-head">
+        <h3 id="playerTitle">ভিডিও টাইটেল</h3>
+        <button class="player-close" onclick="closePlayer()">✕</button>
+      </div>
+      <div class="player-frame-wrap">
+        <iframe id="playerFrame" src="" allowfullscreen allow="autoplay; encrypted-media" style="display:none;"></iframe>
+        <video id="playerVideo" controls autoplay style="display:none; width:100%; height:100%;"></video>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ================================================================
+    // ★★★ Adsterra Smart Link — ভিডিওতে ক্লিক করলে এই লিংক নতুন ট্যাবে খুলবে ★★★
+    // ================================================================
+    const ADSTERRA_SMART_LINK = "https://www.effectivecpmnetwork.com/qbzu544g?key=fcde679cc906e059ed551dd1ff564ce1";
+
+    // ================================================================
+    // ★★★ এখানে আপনার ভিডিও লিংক যোগ করুন (নিচের অ্যারেতে) ★★★
+    // প্রতিটা ভিডিওর জন্য বসান:
+    //   - title:    ভিডিওর নাম
+    //   - mp4Url:   সরাসরি .mp4 ফাইলের লিংক (ব্রাউজারের নেটিভ প্লেয়ারে চলবে)
+    //   - thumbUrl: থাম্বনেইল ছবির লিংক (না দিলে খালি রঙিন বক্স দেখাবে,
+    //               পরে ওয়েবসাইট থেকেও আপলোড করা যাবে)
+    // ================================================================
+    const videoData = [
+      { title: "মা ছেলে ভিডিও প্রথম পার্ট",  mp4Url: "https://cdn.jsdelivr.net/gh/sk7000sk7000-droid/viralvideo@main/5_6267254220064300333~2.mp4",  thumbUrl: "https://i.ibb.co.com/3m26JyYB/Screenshot-20260722-085659.jpg" },
+      { title: "মা ছেলের চোদাচুদি ভিডিও ২য় পার্ট ",  mp4Url: "https://cdn.jsdelivr.net/gh/sk7000sk7000-droid/viralvideo@main/5_6267254220064300357.mp4",  thumbUrl: "https://i.ibb.co.com/HfrJbPnJ/Screenshot-20260722-085641.jpg" },
+      { title: "ভাই বোনের ভাইরাল ভিডিও ",  mp4Url: "https://cdn.jsdelivr.net/gh/sk7000sk7000-droid/viralvideo@main/34v7my.mp4",  thumbUrl: "https://i.ibb.co.com/qYLzFTzc/Screenshot-20260721-143213.jpg" },
+      { title: "দুই বন্ধুর ভাইরাল ভিডিও ",  mp4Url: "https://cdn.jsdelivr.net/gh/sk7000sk7000-droid/viralvideo@main/received_1011951565095905.mp4",  thumbUrl: "https://i.ibb.co.com/vvJtx939/Screenshot-20260721-143226.jpg" },
+      { title: "বড় ভাই চুদে দিলো🥵",  mp4Url: "https://cdn.jsdelivr.net/gh/sk7000sk7000-droid/viralvideo@main/8dkedi.mp4",  thumbUrl: "https://i.postimg.cc/qMQN9Zsx/Screenshot-20260721-153819.jpg" },
+      { title: "বন্ধু চুদে দিলো 🥒🥵",  mp4Url: "https://cdn.jsdelivr.net/gh/sk7000sk7000-droid/viralvideo@main/r248bd.mp4",  thumbUrl: "https://i.postimg.cc/mZykH665/Screenshot-20260721-153829.jpg" },
+    ];
+    // ================================================================
+
+    const palettes = [
+      ['#3a2436','#1e1e25'], ['#25324a','#1e1e25'], ['#3a3324','#1e1e25'],
+      ['#2f3a24','#1e1e25'], ['#3a2424','#1e1e25'], ['#24343a','#1e1e25']
+    ];
+
+    // থাম্বনেইল ডেটা মেমোরিতে রাখা হচ্ছে (কার্ড আইডি -> ডেটা URL)
+    // টাইটেল ডেটা মেমোরিতে রাখা হচ্ছে (কার্ড আইডি -> টাইটেল টেক্সট)
+    const titleStore = {};
+
+    function openPlayer(mp4Url, embedUrl, title){
+      document.getElementById('playerTitle').textContent = title;
+      const frame = document.getElementById('playerFrame');
+      const video = document.getElementById('playerVideo');
+      if(mp4Url){
+        // সরাসরি .mp4 লিংক -> ব্রাউজারের নেটিভ ভিডিও প্লেয়ার ব্যবহার হবে
+        frame.style.display = 'none';
+        frame.src = '';
+        video.style.display = 'block';
+        video.src = mp4Url;
+      } else {
+        // embed লিংক (youtube/vimeo ইত্যাদি) -> iframe ব্যবহার হবে
+        video.style.display = 'none';
+        video.pause();
+        video.src = '';
+        frame.style.display = 'block';
+        frame.src = embedUrl;
+      }
+      document.getElementById('playerModal').classList.add('open');
+    }
+
+    function closePlayer(){
+      document.getElementById('playerModal').classList.remove('open');
+      const frame = document.getElementById('playerFrame');
+      const video = document.getElementById('playerVideo');
+      frame.src = '';
+      video.pause();
+      video.src = '';
+    }
+
+    // ---- ভিডিও টাইটেল এডিট করার ফিচার ----
+    function editTitle(cardId){
+      const displayEl = document.getElementById('title-display-' + cardId);
+      const currentText = displayEl.textContent;
+      const wrap = document.getElementById('title-wrap-' + cardId);
+      wrap.innerHTML = `
+        <input type="text" class="title-input" id="title-input-${cardId}" value="${currentText.replace(/"/g, '&quot;')}" />
+      `;
+      const input = document.getElementById('title-input-' + cardId);
+      input.focus();
+      input.select();
+      input.addEventListener('keydown', (ev) => {
+        if(ev.key === 'Enter') saveTitle(cardId);
+        if(ev.key === 'Escape') cancelTitleEdit(cardId, currentText);
+      });
+      input.addEventListener('blur', () => saveTitle(cardId));
+    }
+
+    function saveTitle(cardId){
+      const input = document.getElementById('title-input-' + cardId);
+      if(!input) return;
+      const newTitle = input.value.trim() || 'ভিডিও টাইটেল';
+      titleStore[cardId] = newTitle;
+      renderTitle(cardId, newTitle);
+    }
+
+    function cancelTitleEdit(cardId, oldText){
+      renderTitle(cardId, oldText);
+    }
+
+    function renderTitle(cardId, text){
+      const wrap = document.getElementById('title-wrap-' + cardId);
+      wrap.innerHTML = `
+        <div class="title-row">
+          <span class="title" id="title-display-${cardId}" onclick="playCard('${cardId}')">${text}</span>
+          <button class="title-edit-btn" onclick="event.stopPropagation(); editTitle('${cardId}')">এডিট</button>
+        </div>
+      `;
+    }
+
+    const cardMeta = {}; // cardId -> {mp4Url, embedUrl}
+    function playCard(cardId){
+      const meta = cardMeta[cardId];
+      if(!meta) return;
+
+      // ★★★ ভিডিওতে ক্লিক করলে আগে Adsterra Smart Link নতুন ট্যাবে খুলবে ★★★
+      // অনেক ব্রাউজার popup ব্লক করে দেয় যদি window.open সরাসরি ইউজারের
+      // ক্লিক ইভেন্টের ভেতরে না ডাকা হয়, তাই এটা সবার আগেই কল করা হচ্ছে।
+      if(ADSTERRA_SMART_LINK){
+        window.open(ADSTERRA_SMART_LINK, '_blank');
+      }
+
+      const title = titleStore[cardId] || 'ভিডিও টাইটেল';
+      openPlayer(meta.mp4Url, meta.embedUrl, title);
+    }
+
+    function buildCard(containerId, i, suffix){
+      const idx = (i - 1) % videoData.length;
+      const v = videoData[idx];
+      const [a,b] = palettes[idx % palettes.length];
+      const mins = Math.floor(Math.random()*20)+3;
+      const secs = Math.floor(Math.random()*60).toString().padStart(2,'0');
+      const views = (Math.random()*900+10).toFixed(0);
+      const cardId = containerId + '-' + i + suffix;
+      const displayTitle = v.title;
+      cardMeta[cardId] = { mp4Url: v.mp4Url || null, embedUrl: v.embedUrl || '' };
+      titleStore[cardId] = displayTitle;
+      const thumbImgTag = v.thumbUrl ? `<img class="thumb-img" src="${v.thumbUrl}">` : '';
+      return `
+        <div class="card">
+          <div class="thumb" id="thumb-${cardId}" style="--card-a:${a};--card-b:${b}" onclick="playCard('${cardId}')">
+            ${thumbImgTag}
+            <span class="play-icon"></span>
+            <span class="hd">HD</span>
+            <span class="duration">${mins}:${secs}</span>
+          </div>
+          <div class="card-info">
+            <div class="title-row" id="title-wrap-${cardId}">
+              <span class="title" id="title-display-${cardId}" onclick="playCard('${cardId}')">${displayTitle}</span>
+              <button class="title-edit-btn" onclick="event.stopPropagation(); editTitle('${cardId}')">এডিট</button>
+            </div>
+            <div class="meta">${views}K ভিউ · ${Math.floor(Math.random()*30)+1} দিন আগে</div>
+          </div>
+          <div class="card-ad-slot" id="ad-${cardId}"></div>
+        </div>`;
+    }
+
+    function makeCards(containerId, count){
+      const el = document.getElementById(containerId);
+      let html = '';
+      for(let i=1;i<=count;i++){
+        html += buildCard(containerId, i, '');
+      }
+      // দ্বিতীয়বার একই কার্ডগুলো (আলাদা আইডি সহ) বসানো হচ্ছে, যাতে
+      // অ্যানিমেশন লুপ হওয়ার সময় কোনো ফাঁকা জায়গা না দেখা যায় (সিমলেস স্ক্রল)।
+      let htmlDup = '';
+      for(let i=1;i<=count;i++){
+        htmlDup += buildCard(containerId, i, '-dup');
+      }
+      el.innerHTML = html + htmlDup;
+    }
+    makeCards('grid-1', 12);
+    makeCards('grid-2', 8);
+    makeCards('grid-3', 8);
+
+    // ================================================================
+    // ★★★ প্রতিটা ভিডিও কার্ডের নিচে একটা করে Adsterra Banner এড লোড করা হচ্ছে ★★★
+    // ⚠️ লক্ষ্য করুন: এই ৪টা কোড একই পেজে বহুবার (প্রতিটা ভিডিওর জন্য) রিপিট
+    // করা Adsterra-র সাধারণ নিয়মের বাইরে — এতে ড্যাশবোর্ডে ইম্প্রেশন
+    // কাউন্ট বা অ্যাপ্রুভালে সমস্যা হতে পারে, এবং কার্ডের সাইজ (220px চওড়া)
+    // এর চেয়ে বড় এড (468x60, 728x90) কেটে (clip) দেখাবে।
+    // ================================================================
+    const bannerConfigs = [
+      { key:'910c15f24ce112728c1504e20755bb0f', width:160, height:600 }, // skyscraper
+      { key:'23cfb7f73e7455ab317cff22a032651b', width:300, height:250 }, // medium rectangle
+      { key:'e4439fbd0d3c15c9b3c2c97d33cf72d3', width:468, height:60  }, // full banner
+      { key:'8e1957a358c28ebdcc4d7e59fa2da5da', width:728, height:90  }, // leaderboard
+    ];
+
+    function loadBannerAd(container, cfg){
+      return new Promise((resolve) => {
+        window.atOptions = { key: cfg.key, format:'iframe', height:cfg.height, width:cfg.width, params:{} };
+        const s = document.createElement('script');
+        s.src = `https://www.highperformanceformat.com/${cfg.key}/invoke.js`;
+        s.onload = resolve;
+        s.onerror = resolve;
+        container.appendChild(s);
+      });
+    }
+
+    async function loadAllCardAds(){
+      const slots = document.querySelectorAll('.card-ad-slot');
+      // একটার পর একটা (sequentially) লোড করা হচ্ছে, যাতে গ্লোবাল atOptions
+      // ভ্যারিয়েবলে কনফ্লিক্ট হয়ে ভুল সাইজের এড না বসে যায়।
+      for(let i=0;i<slots.length;i++){
+        const cfg = bannerConfigs[i % bannerConfigs.length];
+        await loadBannerAd(slots[i], cfg);
+      }
+    }
+    loadAllCardAds();
+
+    // ---- হেডারের ছোট স্ক্রলিং ভিডিও স্ট্রিপ ----
+    function makeHeaderCarousel(){
+      const el = document.getElementById('header-carousel-track');
+      let miniHtml = '';
+      videoData.forEach((v, idx) => {
+        const [a,b] = palettes[idx % palettes.length];
+        const thumbImgTag = v.thumbUrl ? `<img src="${v.thumbUrl}">` : '';
+        miniHtml += `<div class="mini-card" style="--card-a:${a};--card-b:${b}">${thumbImgTag}</div>`;
+      });
+      el.innerHTML = miniHtml + miniHtml; // সিমলেস লুপের জন্য দুইবার
+    }
+    makeHeaderCarousel();
+  </script>
+
+  <!-- ============ ADSTERRA SOCIAL BAR / POPUNDER (পুরো পেজে একবার লোড হয়) ============ -->
+  <script src="https://pl30461846.effectivecpmnetwork.com/04/80/f9/0480f95b9438b2e750ab4500b0d9fd78.js"></script>
+
+</body>
+</html>
